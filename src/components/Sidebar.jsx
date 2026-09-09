@@ -8,6 +8,18 @@ const Sidebar = ({ adicionarTarefa }) => {
   const [prioridade, setPrioridade] = useState("Baixa");
 
   const handleNovaTarefa = () => {
+    if (nome === "") {
+      alert("O nome não pode ficar em branco");
+
+      return;
+    }
+
+    if (data === "") {
+      alert("Por favor selecione uma data");
+
+      return;
+    }
+
     const novaTarefa = {
       id: Date.now(),
       nome: nome,
